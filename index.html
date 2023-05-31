@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Responsive HTML5 Resume/CV Template for Developers">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
-    <link rel="shortcut icon" href="favicon.ico">  
+    <link rel="shortcut icon" href="prueba.png" type="image/png"> 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 	<script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
@@ -135,17 +135,7 @@
             </section>
             
         </div>
-        <div><h1> Formulario para solicitud de currículum</h1>
-            <form>
-                <label>ID:</label>
-                <input type="text" id="id"><br><br>
-                <label>Nombre:</label>
-                <input type="text" id="nombre"><br><br>
-                <label>Apellido 1:</label>
-                <input type="text" id="apellido1"><br><br>
-                <button type="button" onclick="insertarDatos()">Insertar datos</button>
-            </form>
-        </div>
+       
        
     </div>
     
@@ -155,47 +145,6 @@
         </div>
     </footer>
   
-    <script>
-        function insertarDatos() {
-            const id = document.getElementById("id").value;
-            const nombre = document.getElementById("nombre").value;
-            const apellido1 = document.getElementById("apellido1").value;
-        }
-        
-        const sql = require('mssql');
-
-        const config = {
-            server: 'servidorsqldemanuel.database.windows.net',
-            database: 'db1',
-            user: 'manuel',
-            password: 'AdminPassword1234.',
-            options: {
-                encrypt: true
-            }
-        };
-
-        sql.connect(config, (err) => {
-         if (err) {
-        console.log(err);
-        } else {
-        console.log('Conectado correctamente a la base de datos.');
-         }
-        });
-
-        const insertQuery = `INSERT INTO ALUMNO (ID, Nombre, Apellido1) VALUES ('${id}', '${nombre}', '${apellido1}')`;
-
-        const request = new sql.Request();
-
-        request.query(insertQuery, (err, result) => {
-         if (err) {
-            console.log(err);
-            } else {
-        console.log('Datos insertados correctamente en la tabla de alumnos.');
-        }
-        });
-
-        sql.close();
-    </script>
     
 </body>
 </html> 
